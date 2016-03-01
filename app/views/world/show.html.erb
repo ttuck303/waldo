@@ -1,2 +1,13 @@
-<h1>World#show</h1>
-<p>Find me in app/views/world/show.html.erb</p>
+<h1><%= @world.title %></h1>
+<h4>Difficulty: <%= @world.difficulty %></h4>
+<div class="divider"></div>
+<div class="row">
+  <div class="col l10">
+    <div class='large_image_holder'>
+      <%= image_tag @world.image.url %>
+    </div>
+  </div>
+  <div class="col l2">
+    <p>Sidebar</p>
+  </div>
+</div>
