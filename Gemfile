@@ -28,6 +28,7 @@ gem "paperclip", "~> 4.3"
 gem 'aws'
 gem 'aws-sdk', '< 2.0'
 gem 'figaro'
+gem 'jquery-turbolinks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
