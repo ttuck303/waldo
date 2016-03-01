@@ -9,5 +9,8 @@ $(function(){
      console.log("parentOffset: " + parentOffset);
      console.log("relX: " + relX);
      console.log("relY: "+ relY);
+     console.log("pageX: " + e.pageX);
+     console.log("pageY: " + e.pageY);
+     $(".character_select").offset({top: e.pageY, left: e.pageX}).css("opacity", 1);
   });
 });

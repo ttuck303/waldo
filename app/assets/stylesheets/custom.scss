@@ -5,8 +5,23 @@
 }
 
 .t_large_image_holder{
+  position: relative;
   img {
     width: 100%;
     //width: 90vw; this would make it 90% of view window, but it doesn't re-center it. 70% (set by container in application.html) is still small for many of these pictures)
   }
+}
+
+.character_select{
+  position: absolute;
+  z-index: 50;
+  max-width: 300px;
+  //display: none;
+  opacity: 0;
+  //top:0;
+  //left: 0;
+  .collection, .with-header {
+    margin-top: 0;
+  }
+
 }
