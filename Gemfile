@@ -25,7 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'materialize-sass'
 gem "paperclip", "~> 4.3"
-gem 'aws-sdk'
+gem 'aws'
+gem 'aws-sdk', '< 2.0'
 gem 'figaro'
 
 # Use ActiveModel has_secure_password
