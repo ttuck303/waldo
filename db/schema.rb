@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301001824) do
+ActiveRecord::Schema.define(version: 20160301180124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hitboxes", force: :cascade do |t|
+    t.integer  "world_id"
+    t.string   "character"
+    t.decimal  "x_left"
+    t.decimal  "x_right"
+    t.decimal  "y_bottom"
+    t.decimal  "y_top"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "hitboxes", ["world_id", "character"], name: "index_hitboxes_on_world_id_and_character", using: :btree
+  add_index "hitboxes", ["world_id"], name: "index_hitboxes_on_world_id", using: :btree
 
   create_table "worlds", force: :cascade do |t|
     t.string   "title"
@@ -27,4 +41,5 @@ ActiveRecord::Schema.define(version: 20160301001824) do
     t.datetime "image_updated_at"
   end
 
+  add_foreign_key "hitboxes", "worlds"
 end

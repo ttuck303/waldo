@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  world_id: 
+  character: MyString
+  x_left: 9.99
+  x_right: 9.99
+  y_bottom: 9.99
+  y_top: 9.99
+
+two:
+  world_id: 
+  character: MyString
+  x_left: 9.99
+  x_right: 9.99
+  y_bottom: 9.99
+  y_top: 9.99
