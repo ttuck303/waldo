@@ -6,6 +6,8 @@
 
 .t_large_image_holder{
   position: relative;
+  max-width: 1000px;
+  min-width: 1000px;
   img {
     width: 100%;
     //width: 90vw; this would make it 90% of view window, but it doesn't re-center it. 70% (set by container in application.html) is still small for many of these pictures)
