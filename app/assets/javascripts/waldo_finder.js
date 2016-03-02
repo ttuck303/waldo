@@ -21,3 +21,21 @@ $(function(){
     char_modal.css("visibility", "hidden");
   });
 });
+
+var check_click = function(x, y, character){
+  $.ajax({
+    url: "click_check",
+    data: { character: character, x_coord: x, y_coord: y },
+    type: 'GET',
+    dataType: :json, 
+    success: response_func(data, x, y, character), // assuming here that data is the response bool, true or false 
+    timeout: 5000,
+    debugger
+  });
+};
+
+function respo
+
+function character_found(character){
+  $('.title:contains('+character+')').parent().addClass("found");
+};

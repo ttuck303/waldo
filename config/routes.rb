@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'world#index'
   resources :world, only: [:show, :index]
+  get 'click_check' => 'worlds#click_check'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
