@@ -10,10 +10,13 @@ class WorldController < ApplicationController
 
   def click_check
     x_coord = params[:x_coord].to_f
-    y_coord = params[:x_coord].to_f
+    y_coord = params[:y_coord].to_f
     character = params[:character]
     hitbox = @world.hitboxes.find_by_character(character)
     hit_status = ((x_coord >= hitbox.x_left) && (x_coord <= hitbox.x_right) && (y_coord >= hitbox.y_top) && (y_coord <= hitbox.y_bottom))
+    puts x_coord
+    puts y_coord
+    puts hit_status
     render json: hit_status
   end
 
