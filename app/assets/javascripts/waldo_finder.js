@@ -4,7 +4,7 @@ $(function(){
   console.log("jQuery loaded and ready");
   char_modal = $(".character_select");
   char_modal.css("visibility", "hidden");
-  $(".t_large_image_holder img").click(function(e){
+  $(".world_image").click(function(e){
     char_modal.offset({top: e.pageY, left: e.pageX}).css("visibility", "visible");
     var parentOffset = $(this).parent().offset(); 
     relX = e.pageX - parentOffset.left;
