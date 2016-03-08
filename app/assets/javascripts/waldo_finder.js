@@ -1,3 +1,5 @@
+var relX, relY;
+
 $(function(){
   console.log("jQuery loaded and ready");
   var char_modal = $(".character_select");
@@ -5,8 +7,8 @@ $(function(){
   $(".t_large_image_holder img").click(function(e){
     char_modal.offset({top: e.pageY, left: e.pageX}).css("visibility", "visible");
      var parentOffset = $(this).parent().offset(); 
-     var relX = e.pageX - parentOffset.left;
-     var relY = e.pageY - parentOffset.top;
+     relX = e.pageX - parentOffset.left;
+     relY = e.pageY - parentOffset.top;
      console.log("Image was clicked.");
      console.log("parentOffset: " + parentOffset);
      console.log("relX: " + relX);
@@ -20,21 +22,43 @@ $(function(){
     e.preventDefault();
     char_modal.css("visibility", "hidden");
   });
+  $("#waldo_select").click(function(e){
+    console.log("clicked Waldo");
+    e.preventDefault();
+    check_click(5, 5, "Waldo");
+  });
 });
 
 var check_click = function(x, y, character){
   $.ajax({
-    url: "click_check",
-    data: { character: character, x_coord: x, y_coord: y },
+    url: "/click_check",
+    data: { 
+      id:  window.location.href.split("/").pop(),
+      character: character, 
+      x_coord: relX, 
+      y_coord: relY 
+    },
     type: 'GET',
-    dataType: :json, 
-    success: response_func(data, x, y, character), // assuming here that data is the response bool, true or false 
-    timeout: 5000,
-    debugger
+    dataType: "json", 
+    success: function( json ){
+      console.log("response:" + json);
+    }, // assuming here that data is the response bool, true or false 
+    error: function( xhr, status, errorThrown ){
+      alert( "Sorry, there was a problem!" );
+      console.log( "Error: " + errorThrown );
+      console.log( "Status: " + status );
+      console.dir( xhr );
+    },
+    complete: function( xhr, status ) {
+      alert( "The request is complete!" );
+    },
+    timeout: 5000
   });
 };
 
-function respo
+function response_func(d, x, y, c){
+  console.log("Ajax response received.");
+};
 
 function character_found(character){
   $('.title:contains('+character+')').parent().addClass("found");
