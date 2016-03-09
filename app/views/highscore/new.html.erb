@@ -1,0 +1,10 @@
+<%= form_tag({controller: "highscore", action: "create"}, method: "post") do %>
+  <%= label_tag("highscore[name]", "Name") %>
+  <%= text_field_tag "highscore[name]" %>
+
+  <%= hidden_field :highscore, :time, :value => params[:time] %>
+  <%= hidden_field :highscore, :world_id, :value => params[:world_id] %>
+  <%= submit_tag "Submit" %>
+<% end %>
+
+<%= debug params %> 

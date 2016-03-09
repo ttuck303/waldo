@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'highscore/new'
-
-  get 'highscore/index'
-
-  get 'highscore/create'
-
   root 'world#index'
   get '/click_check' => 'world#click_check'
   resources :world, only: [:show, :index] do 
