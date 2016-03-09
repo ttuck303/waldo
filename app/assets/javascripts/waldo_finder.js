@@ -1,8 +1,9 @@
-var relX, relY, char_modal;
+var relX, relY, char_modal, game_timer, start_time, t;
 
 $(function(){
   console.log("jQuery loaded and ready");
   char_modal = $(".character_select");
+  game_timer = $("#waldo_timer");
   char_modal.css("visibility", "hidden");
   $(".world_image").click(function(e){
     char_modal.offset({top: e.pageY, left: e.pageX}).css("visibility", "visible");
@@ -37,7 +38,28 @@ $(function(){
     e.preventDefault();
     check_click("Whitebeard");
   });
+
 });
+
+window.onload = function(){
+  $(".progress").remove();
+  intialize_timer();
+
+};
+
+var intialize_timer = function(){
+  game_timer.html("0"); // sets game timer to 00:00
+  start_time = (new Date);
+  t = window.setInterval(increment_timer, 200);
+};
+
+var increment_timer = function(){
+  //console.log("firing timer");
+  current_time = (new Date);
+  elapsed_time = (current_time - start_time);
+  seconds = Math.round(elapsed_time/1000);
+  game_timer.html(seconds);
+};
 
 var hide_char_modal = function(){
   char_modal.css("visibility", "hidden");
@@ -86,4 +108,8 @@ function response_func(found, x, y, character){
 
 function character_found(character){
   $('.title:contains('+character+')').parent().addClass("found").remove();
+  if ($(".collection").children().size() == 2){
+    window.clearInterval(t);
+    alert("you found them all in " + game_timer.html() + " seconds!");
+  }
 };

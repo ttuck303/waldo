@@ -1,6 +1,20 @@
-<h1><%= @world.title %></h1>
-<h5>Difficulty: <%= @world.difficulty %></h5>
-<p><em>Tip: To zoom in, use 'ctrl +' on windows or 'cmd +' on mac. To zoom out, use 'ctrl -' on windows or 'cmd -' on mac.</em></p>
+<div class="row">
+  <div class="col l6">
+    <h1><%= @world.title %></h1>
+    <h5>Difficulty: <%= @world.difficulty %></h5>
+  </div>
+  <div class="col l6">
+    <h5>Time:</h5>
+    <h2 id="waldo_timer">0</h2>
+    <p>Characters to find: <% @characters.each do |c| %><%= c %> <% end %></p>
+  </div>
+  <div class="col l12">
+    <p><em>Tip: To zoom in, use 'ctrl +' on windows or 'cmd +' on mac. To zoom out, use 'ctrl -' on windows or 'cmd -' on mac.</em></p>
+  </div>
+</div>
+<div class="progress">
+  <div class="indeterminate"></div>
+</div>
 <div class="divider"></div>
 <div class="row">
   <div class="col l12">
