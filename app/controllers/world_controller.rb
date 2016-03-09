@@ -2,6 +2,7 @@ class WorldController < ApplicationController
   before_action :set_world, only: [:show, :click_check]
 
   def show
+    @characters = @world.get_hidden_characters
   end
 
   def index
