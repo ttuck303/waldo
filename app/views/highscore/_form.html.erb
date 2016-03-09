@@ -1,0 +1,6 @@
+<%= form_for [@world, @world.highscores.new]  do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= hidden_field :highscore, :time, :id => "hidden_time_input", :value => params[:time] %>
+  <%= f.submit "Submit" %>
+<% end %>

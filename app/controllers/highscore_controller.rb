@@ -1,6 +1,7 @@
 class HighscoreController < ApplicationController
   def new
-    @highscore = Highscore.new
+    @world = World.find(params[:world_id])
+    @highscore = @world.highscores.new
   end
 
   def index
@@ -8,7 +9,8 @@ class HighscoreController < ApplicationController
   end
 
   def create
-    @highscore = Highscore.new(highscore_params)
+    @world = World.find(params[:world_id])
+    @highscore = @world.highscores.new(highscore_params)
     if @highscore.save
       redirect_to world_highscore_index_path(world: highscore_params[:world_id]) # need to somehow get the world in there
     else

@@ -111,6 +111,7 @@ function character_found(character){
   if ($(".collection").children().size() == 2){
     window.clearInterval(t);
     alert("you found them all in " + game_timer.html() + " seconds!");
+    $("#hidden_time_input").attr("value", game_timer.html());
     $("#modal1").openModal();
   }
 };

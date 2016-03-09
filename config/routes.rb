@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'world#index'
   get '/click_check' => 'world#click_check'
+  post '/world/:world_id/highscore' => 'highscore#create', as: 'world_highscores'
   resources :world, only: [:show, :index] do 
     resources :highscore, only: [:new, :create, :index]
   end
