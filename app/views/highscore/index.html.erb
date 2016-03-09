@@ -1,0 +1,26 @@
+<h1>Highscore#index</h1>
+<p>Find me in app/views/highscore/index.html.erb</p>
+
+
+<table>
+  <thead>
+    <tr>
+        <th data-field="rank">Rank</th>
+        <th data-field="name">Name</th>
+        <th data-field="time">Time (seconds)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @highscores.each_with_index do |s, i| %>
+      <tr>
+        <td><%= (i+1) %></td>
+        <td><%= s.name %></td>
+        <td><%= s.time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
