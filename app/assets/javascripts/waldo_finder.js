@@ -44,7 +44,6 @@ $(function(){
 window.onload = function(){
   $(".progress").remove();
   intialize_timer();
-
 };
 
 var intialize_timer = function(){
