@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'highscore/new'
+
+  get 'highscore/index'
+
+  get 'highscore/create'
+
   root 'world#index'
   get '/click_check' => 'world#click_check'
-  resources :world, only: [:show, :index]
+  resources :world, only: [:show, :index] do 
+    resources :highscore, only: [:new, :create, :index]
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.
