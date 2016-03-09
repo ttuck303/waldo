@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301180124) do
+ActiveRecord::Schema.define(version: 20160309014654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "highscores", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "time"
+    t.integer  "world_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "highscores", ["world_id", "created_at"], name: "index_highscores_on_world_id_and_created_at", using: :btree
+  add_index "highscores", ["world_id"], name: "index_highscores_on_world_id", using: :btree
 
   create_table "hitboxes", force: :cascade do |t|
     t.integer  "world_id"
@@ -41,5 +52,6 @@ ActiveRecord::Schema.define(version: 20160301180124) do
     t.datetime "image_updated_at"
   end
 
+  add_foreign_key "highscores", "worlds"
   add_foreign_key "hitboxes", "worlds"
 end
