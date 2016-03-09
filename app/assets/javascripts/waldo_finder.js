@@ -1,6 +1,7 @@
 var relX, relY, char_modal, game_timer, start_time, t;
 
 $(function(){
+  $("#modal1").closeModal();
   console.log("jQuery loaded and ready");
   char_modal = $(".character_select");
   game_timer = $("#waldo_timer");
@@ -111,5 +112,6 @@ function character_found(character){
   if ($(".collection").children().size() == 2){
     window.clearInterval(t);
     alert("you found them all in " + game_timer.html() + " seconds!");
+    $("#modal1").openModal();
   }
 };
