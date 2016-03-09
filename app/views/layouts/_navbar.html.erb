@@ -1,0 +1,12 @@
+<nav>
+  <div class="nav-wrapper">
+    <%= link_to "Where's Waldo?!", root_url, { class: "brand-logo", id: "logo-link"} %>
+    <div class="col s12 right hide-on-med-and-down" id="breadcrumb_menu">
+      <%= link_to "Worlds", root_url, { class: "breadcrumb" } %>
+      <% if !@world.nil? %>
+        <%= link_to @world.title, world_url(@world), { class: "breadcrumb" } %>
+      <% end %>
+    </div>
+  </div>
+</nav>
+        
