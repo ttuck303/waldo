@@ -24,26 +24,12 @@ $(function(){
     e.preventDefault();
     hide_char_modal();
   });
-  $("#waldo_select").click(function(e){
-    console.log("clicked Waldo");
+  $('.select_link').click(function(e){
     e.preventDefault();
-    check_click("Waldo");
-  });
-  $("#odlaw_select").click(function(e){
-    console.log("clicked Odlaw");
-    e.preventDefault();
-    check_click("Odlaw");
-  });
-  $("#whitebeard_select").click(function(e){
-    console.log("clicked Whitebeard");
-    e.preventDefault();
-    check_click("Whitebeard");
-  });
-  $("#wenda_select").click(function(e){
-    console.log("clicked Wenda");
-    e.preventDefault();
-    check_click("Wenda");
-  });
+    var this_character = $(this).attr('data-character');
+    console.log("clicked" + this_character);
+    check_click(this_character);
+  })
   $(".world_image").load(function(){
     $(".progress").remove();
     intialize_timer();
