@@ -1,8 +1,12 @@
-<%= form_for [@world, @world.highscores.new]  do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "Guest", value: "Guest" %>
-  <%= hidden_field :highscore, :time, :id => "hidden_time_input", :value => params[:time] %>
-   <div class="modal-footer">
-    <%= f.submit "Submit", class: " modal-action modal-close waves-effect waves-green btn-flat " %>
-  </div>
-<% end %>
+<div class="modal-content">
+  <h4>You completed the level in <span id="time_placeholder"></span> seconds</h4>
+  <h4>Enter your name:</h4>
+  <%= form_for [@world, @world.highscores.new]  do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Guest", value: "Guest" %>
+    <%= hidden_field :highscore, :time, :id => "hidden_time_input", :value => params[:time] %>
+     <div class="modal-footer">
+      <%= f.submit "Submit", class: " modal-action modal-close waves-effect waves-green btn-flat " %>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,4 @@
-var relX, relY, char_modal, game_timer, start_time, t;
+var relX, relY, char_modal, game_timer, start_time, window_timer;
 
 $(function(){
   $("#modal1").closeModal();
@@ -39,18 +39,19 @@ $(function(){
     e.preventDefault();
     check_click("Whitebeard");
   });
-
+  $(".world_image").load(function(){
+    $(".progress").remove();
+    intialize_timer();
+  });
+  $(window).on('hashchange', function(e){
+    window.clearInterval(window_timer);
+  });
 });
-
-window.onload = function(){
-  $(".progress").remove();
-  intialize_timer();
-};
 
 var intialize_timer = function(){
   game_timer.html("0"); // sets game timer to 00:00
   start_time = (new Date);
-  t = window.setInterval(increment_timer, 200);
+  window_timer = window.setInterval(increment_timer, 200);
 };
 
 var increment_timer = function(){
@@ -109,7 +110,7 @@ function response_func(found, x, y, character){
 function character_found(character){
   $('.title:contains('+character+')').parent().addClass("found").remove();
   if ($(".collection").children().size() == 2){
-    window.clearInterval(t);
+    window.clearInterval(window_timer);
     alert("you found them all in " + game_timer.html() + " seconds!");
     $("#hidden_time_input").attr("value", game_timer.html());
     $("#time_placeholder").html(game_timer.html());
