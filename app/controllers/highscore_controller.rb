@@ -6,7 +6,8 @@ class HighscoreController < ApplicationController
   end
 
   def index
-    @highscores = Highscore.all.order(:time).limit(20)
+    @world = World.find(params[:world_id])
+    @highscores = Highscore.where(world_id: params[:world_id]).order(:time).limit(20)
   end
 
   def create

@@ -112,6 +112,7 @@ function character_found(character){
     window.clearInterval(t);
     alert("you found them all in " + game_timer.html() + " seconds!");
     $("#hidden_time_input").attr("value", game_timer.html());
+    $("#time_placeholder").html(game_timer.html());
     $("#modal1").openModal();
   }
 };

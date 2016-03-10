@@ -6,6 +6,9 @@
       <% if !@world.nil? %>
         <%= link_to @world.title, world_url(@world), { class: "breadcrumb" } %>
       <% end %>
+      <% if !@highscores.nil? %>
+        <%= link_to "Highscores", world_highscore_index_path(world_id: @world.id), { class: "breadcrumb" } %>
+      <% end %>
     </div>
   </div>
 </nav>
