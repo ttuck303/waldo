@@ -2,6 +2,7 @@
   <% @worlds.each do |w| %>
     <div class="col s12 m6 l4">
       <h4><%= w.title %></h4>
+      <h6><em><%= w.difficulty %></em></h6>
       <div class="t_image_holder"><%= link_to (image_tag w.image.url(:thumb)), world_path(w) %></div>
     </div>
   <% end %>
