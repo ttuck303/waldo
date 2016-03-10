@@ -39,6 +39,11 @@ $(function(){
     e.preventDefault();
     check_click("Whitebeard");
   });
+  $("#wenda_select").click(function(e){
+    console.log("clicked Wenda");
+    e.preventDefault();
+    check_click("Wenda");
+  });
   $(".world_image").load(function(){
     $(".progress").remove();
     intialize_timer();

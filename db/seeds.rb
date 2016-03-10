@@ -32,7 +32,7 @@ Hitbox.create!([
   {world_id: 4, character: "Wenda", x_left: "751.9", x_right: "759.9", y_bottom: "497.4", y_top: "487.4"},
   {world_id: 4, character: "Odlaw", x_left: "858.95", x_right: "867.9", y_bottom: "538.4", y_top: "526.48"},
   {world_id: 4, character: "Whitebeard", x_left: "283.95", x_right: "290.95", y_bottom: "89.48", y_top: "81.48"},
-  {world_id: 1, character: "Wenda", x_left: "299.95", x_right: "298.95", y_bottom: "354.48", y_top: "333.48"}
+  {world_id: 1, character: "Wenda", x_left: "287.95", x_right: "298.95", y_bottom: "354.48", y_top: "333.48"}
 ])
 World.create!([
   {title: "Gobbling Gluttons", difficulty: "Hard", image_file_name: "open-uri20160308-13329-1smrbdn", image_content_type: "image/jpeg", image_file_size: 1633594, image_updated_at: "2016-03-09 04:08:26"},
