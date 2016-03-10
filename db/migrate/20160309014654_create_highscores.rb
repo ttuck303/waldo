@@ -1,6 +1,5 @@
 class CreateHighscores < ActiveRecord::Migration
   def change
-    drop_table :highscores
     create_table :highscores do |t|
       t.string :name
       t.integer :time
