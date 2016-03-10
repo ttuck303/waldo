@@ -1,4 +1,5 @@
 class HighscoreController < ApplicationController
+
   def new
     @world = World.find(params[:world_id])
     @highscore = @world.highscores.new

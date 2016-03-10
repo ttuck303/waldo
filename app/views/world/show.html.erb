@@ -30,9 +30,6 @@
     <h4>Enter your name:</h4>
     <%= render 'highscore/form', world: @world %>
   </div>
-  <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
 </div>
 
 <%= link_to "Highscore", new_world_highscore_path({world_id: @world.id, time: 47}), class: "waves-effect waves-light btn" %>
