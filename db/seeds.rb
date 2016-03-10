@@ -27,7 +27,12 @@ Hitbox.create!([
   {world_id: 7, character: "Wenda", x_left: "313.95", x_right: "329.95", y_bottom: "531.48", y_top: "508.48"},
   {world_id: 7, character: "Odlaw", x_left: "953.95", x_right: "963.95", y_bottom: "247.48", y_top: "223.48"},
   {world_id: 7, character: "Waldo", x_left: "165.9", x_right: "174.9", y_bottom: "452.48", y_top: "438.4"},
-  {world_id: 7, character: "Whitebeard", x_left: "789.95", x_right: "796.95", y_bottom: "71.48", y_top: "61.48"}
+  {world_id: 7, character: "Whitebeard", x_left: "789.95", x_right: "796.95", y_bottom: "71.48", y_top: "61.48"},
+  {world_id: 4, character: "Waldo", x_left: "160.95", x_right: "168.95", y_bottom: "554.48", y_top: "541.48"},
+  {world_id: 4, character: "Wenda", x_left: "751.9", x_right: "759.9", y_bottom: "497.4", y_top: "487.4"},
+  {world_id: 4, character: "Odlaw", x_left: "858.95", x_right: "867.9", y_bottom: "538.4", y_top: "526.48"},
+  {world_id: 4, character: "Whitebeard", x_left: "283.95", x_right: "290.95", y_bottom: "89.48", y_top: "81.48"},
+  {world_id: 1, character: "Wenda", x_left: "299.95", x_right: "298.95", y_bottom: "354.48", y_top: "333.48"}
 ])
 World.create!([
   {title: "Gobbling Gluttons", difficulty: "Hard", image_file_name: "open-uri20160308-13329-1smrbdn", image_content_type: "image/jpeg", image_file_size: 1633594, image_updated_at: "2016-03-09 04:08:26"},
